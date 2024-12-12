@@ -1,6 +1,7 @@
 const boxes=document.querySelectorAll(".box");
 
 let turn=1;
+c=0;
 boxes.forEach( (b) =>{
     b.addEventListener("click",()=>{
         if(turn==1){
@@ -12,6 +13,7 @@ boxes.forEach( (b) =>{
             turn=1;
         }
         b.disabled=true;
+        c++;
         winner();
     });
 } );
@@ -24,7 +26,6 @@ win=[[0, 1, 2],
     [2, 4, 6],
     [3, 4, 5],
     [6, 7, 8],];
-c=0;
 var p=document.querySelector("#result");
 
 winner=()=>{
@@ -34,9 +35,8 @@ winner=()=>{
         v3=boxes[i[2]].innerText;
         // console.log("clicked"+v1,v2,v3);
         win_name="";
-        if(v1==v2 && v1==v3 && v1!=""){
+        if(v1!="" && v2!="" && v3!="" && v1==v2 && v2==v3 && v3==v1){
             win_name=v1;
-            
         }
         if(win_name=="" && c==9){
             p.innerText="The game is a Tie";
@@ -51,7 +51,6 @@ winner=()=>{
             boxes.forEach( (b) =>{b.disabled=true;} )
         }
     }
-    c++;
 }
 
 
