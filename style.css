@@ -1,0 +1,25 @@
+.box{
+    height: 75px;
+    width: 75px;
+    padding: 10px;
+    
+}
+
+#box_btns{
+    height: 250px;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+#nav_btns{
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 120px 120px; 
+    gap: 20px;
+}
